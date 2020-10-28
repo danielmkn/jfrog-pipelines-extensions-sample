@@ -2,11 +2,11 @@ resources:
   - name: MyGitHub
     type: GitRepo
     configuration:
-      path: jfrog/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
-      gitProvider: tw_github                                    # <-- Change to your GitHub integration
+      path: danielmkn/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
+      gitProvider: danielMiakotkinGitHub                            # <-- Change to your GitHub integration
       
   - name: MyTest
-    type: tutorials/test
+    type: tutorials1/test
     configuration:
       alpha: "JFrog"
       number: 42
@@ -20,7 +20,7 @@ pipelines:
           my_env_var: "hello" 
     steps:
       - name: Health_Check_Step
-        type: tutorials/HealthCheck
+        type: tutorials1/HealthCheck
         configuration:
           healthCheckUrl: "https://jfrog.com"
           notifyOnSuccess: false
