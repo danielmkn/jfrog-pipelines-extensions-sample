@@ -1,8 +1,8 @@
 resources:
-  - name: MyGitHub
+  - name: testFrameworkRepo
     type: GitRepo
     configuration:
-      path: danielmkn/jfrog-pipelines-extensions-sample/pipeline
+      path: danielmkn/jfrog-pipelines-extensions-sample
       gitProvider: danielMiakotkinGitHub
       
   - name: MyTest
