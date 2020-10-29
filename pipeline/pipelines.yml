@@ -2,8 +2,8 @@ resources:
   - name: MyGitHub
     type: GitRepo
     configuration:
-      path: jfrogtraining/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
-      gitProvider: vinayExtensions                                    # <-- Change to your GitHub integration
+      path: danielmkn/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
+      gitProvider: danielMiakotkinGitHub                                    # <-- Change to your GitHub integration
       
   - name: MyTest
     type: tutorials/gkeClusterResource
