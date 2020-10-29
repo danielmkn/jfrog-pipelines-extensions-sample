@@ -2,11 +2,11 @@ resources:
   - name: MyGitHub
     type: GitRepo
     configuration:
-      path: jfrog/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
-      gitProvider: tw_github                                    # <-- Change to your GitHub integration
+      path: jfrogtraining/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
+      gitProvider: vinayExtensions                                    # <-- Change to your GitHub integration
       
   - name: MyTest
-    type: tutorials/test
+    type: tutorials/gkeClusterResource
     configuration:
       alpha: "JFrog"
       number: 42
@@ -20,7 +20,7 @@ pipelines:
           my_env_var: "hello" 
     steps:
       - name: Health_Check_Step
-        type: tutorials/HealthCheck
+        type: tutorials/gkeCreateCluster
         configuration:
           healthCheckUrl: "https://jfrog.com"
           notifyOnSuccess: false
