@@ -9,19 +9,15 @@ configuration:
     type: String
   gkeClusterZone:
     type: String
-  newGkeClusterName:
-    type: String
-  newGkeClusterZone:
+  gkeClusterName:
     type: String
   num-nodes:
     type: Int
-  enable-autoscaling:
-    type: String
   machine-type:
     type: String
   min-nodes:
     type: Int
   max-nodes:
     type: Int
-  stuff:
-    type: String[]
+  clusterOptions:
+    type: String
