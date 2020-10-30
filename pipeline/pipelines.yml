@@ -10,9 +10,9 @@ resources:
   - name: gkeClusterResource
     type: tutorials/gkeClusterResource
     configuration:
-      projectName: "jfrog-partnership-team"
-      zone: "us-central1-c"
-      clusterName: "jf-prometheus-grafana"
+      googleCloudProj: "jfrog-partnership-team"
+      gkeClusterZone: "us-central1-c"
+      gkeClusterName: "jf-prometheus-grafana"
       googleCloudAuth: gcpK8sPartnershipProject
 
 pipelines:
