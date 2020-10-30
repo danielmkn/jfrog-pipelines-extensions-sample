@@ -6,4 +6,4 @@ list_env_variables() {
   gcloud -v
 }
 
-execute_command "test_input %%context.list_env_variables%%"
+execute_command list_env_variables
