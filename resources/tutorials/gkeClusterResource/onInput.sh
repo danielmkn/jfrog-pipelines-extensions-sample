@@ -4,7 +4,7 @@ test_input() {
   printenv
   echo "Gcloud version:"
   gcloud -v
-
+  kubectl get pods --all-namespaces
 }
 
 execute_command "test_input %%context.resourceName%%"
