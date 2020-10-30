@@ -36,7 +36,6 @@ pipelines:
           max-nodes: 12
           clusterOptions: "--enable-autoscaling"
           inputResources:
-            - name: gkeClusterResource
             - name: extensionSources
           outputResources:
             - name: gkeClusterResource
