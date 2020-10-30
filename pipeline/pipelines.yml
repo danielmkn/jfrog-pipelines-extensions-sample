@@ -7,11 +7,11 @@ resources:
   # Connection of Extension resource
   - name: gkeClusterResource
     type: tutorials/gkeClusterResource
-    configuration:
-      googleCloudProj: "jfrog-partnership-team"
-      gkeClusterZone: "us-central1-c"
-      gkeClusterName: "jf-prometheus-grafana"
-      googleCloudAuth: gcpK8sPartnershipProject
+#    configuration:
+#      googleCloudProj: "jfrog-partnership-team"
+#      gkeClusterZone: "us-central1-c"
+#      gkeClusterName: "jf-prometheus-grafana"
+#      googleCloudAuth: gcpK8sPartnershipProject
 
 pipelines:
   - name: daniel_gcp_test
@@ -29,19 +29,16 @@ pipelines:
           notifyOnFailure: false
           googleCloudProj: "jfrog-partnership-team"
           gkeClusterZone: "us-central1-c"
-          newGkeClusterName: "created-by-pipelines-extension"
-          newGkeClusterZone: "us-central1-c"
+          gkeClusterName: "created-by-pipelines-extension"
           num-nodes: 6
-          enable-autoscaling: "--enable-autoscaling"
           machine-type: "n1-standard-1"
           min-nodes: 1
           max-nodes: 12
-          stuff:
-            - "This is a string"
-            - "This is another string"
+          clusterOptions: "--enable-autoscaling"
           inputResources:
-            - name: gkeClusterResource
+            #- name: gkeClusterResource
             - name: extensionSources
           outputResources:
             - name: gkeClusterResource
-            - name: extensionSources
+            #- name: extensionSources
+            #- name: gcpK8sPartnershipProject
