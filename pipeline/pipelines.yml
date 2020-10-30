@@ -7,14 +7,14 @@ resources:
   # Connection of Extension resource
   - name: gkeClusterResource
     type: tutorials/gkeClusterResource
-#    configuration:
-#      googleCloudProj: "jfrog-partnership-team"
-#      gkeClusterZone: "us-central1-c"
-#      gkeClusterName: "jf-prometheus-grafana"
-#      googleCloudAuth: gcpK8sPartnershipProject
+    configuration:
+      googleCloudProj: "jfrog-partnership-team"
+      gkeClusterZone: "us-central1-c"
+      gkeClusterName: "jf-prometheus-grafana"
+      googleCloudAuth: gcpK8sPartnershipProject
 
 pipelines:
-  - name: daniel_gcp_test
+  - name: daniel_gke_create_cluster
     configuration:
       environmentVariables:
         readOnly:
