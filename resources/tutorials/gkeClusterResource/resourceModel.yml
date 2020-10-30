@@ -1,10 +1,10 @@
 configuration:
-  projectName:
+  googleCloudProj:
     type: String
-  zone:
+  gkeClusterZone:
     type: String
-  clusterName:
+  gkeClusterName:
     type: String
-  serviceAccount:
+  googleCloudAuth:
     type: String
 
