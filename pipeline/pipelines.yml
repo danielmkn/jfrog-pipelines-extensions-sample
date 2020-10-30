@@ -30,7 +30,7 @@ pipelines:
           googleCloudProj: "jfrog-partnership-team"
           gkeClusterZone: "us-central1-c"
           newGkeClusterName: "created-by-pipelines-extension"
-          newGkeClusterZone:
+          newGkeClusterZone: "us-central1-c"
           num-nodes: 6
           enable-autoscaling: "--enable-autoscaling"
           machine-type: "n1-standard-1"
