@@ -13,10 +13,7 @@ resources:
       projectName: "jfrog-partnership-team"
       zone: "us-central1-c"
       clusterName: "jf-prometheus-grafana"
-
-
-
-
+      googleCloudAuth: gcpK8sPartnershipProject
 
 pipelines:
   - name: daniel_gcp_test
