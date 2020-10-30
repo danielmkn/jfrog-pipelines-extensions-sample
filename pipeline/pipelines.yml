@@ -27,9 +27,21 @@ pipelines:
             - name: gcpK8sPartnershipProject
           notifyOnSuccess: false
           notifyOnFailure: false
+          googleCloudProj: "jfrog-partnership-team"
+          gkeClusterZone: "us-central1-c"
+          newGkeClusterName: "created-by-pipelines-extension"
+          newGkeClusterZone:
+          num-nodes: 6
+          enable-autoscaling: "--enable-autoscaling"
+          machine-type: "n1-standard-1"
+          min-nodes: 1
+          max-nodes: 12
           stuff:
             - "This is a string"
             - "This is another string"
           inputResources:
+            - name: gkeClusterResource
+            - name: extensionSources
+          outputResources:
             - name: gkeClusterResource
             - name: extensionSources
