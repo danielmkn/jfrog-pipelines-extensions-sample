@@ -1,8 +1,7 @@
 test_output() {
-  echo "resource name: $1"
-  printenv
+  echo "Resource name: $1"
+  echo "Output"
 
-  gcloud -v
-}
+  }
 
 execute_command "test_output %%context.resourceName%%"

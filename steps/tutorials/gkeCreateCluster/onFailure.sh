@@ -13,7 +13,7 @@ sendFailureSlackNotification() {
       echo "notifyOnFailure is set to false"
     fi
   else
-    echo "Slack integration is not added, skipping notification"
+    echo "Slack integration is not added, skipping notification - FAILED"
   fi
 }
 

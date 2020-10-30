@@ -1,10 +1,9 @@
 test_input() {
-  echo "resource name: $1"
+  echo "Resource name: $1"
+  echo "Environment variables:"
   printenv
-  echo "Testing"
+  echo "Gcloud version:"
   gcloud -v
-  echo $int_gcpK8sPartnershipProject_jsonKey
-
 
 }
 
