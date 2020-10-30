@@ -14,7 +14,7 @@ resources:
       googleCloudAuth: gcpK8sPartnershipProject
 
 pipelines:
-  - name: daniel_gcp_test
+  - name: daniel_gke_create_cluster
     configuration:
       environmentVariables:
         readOnly:
