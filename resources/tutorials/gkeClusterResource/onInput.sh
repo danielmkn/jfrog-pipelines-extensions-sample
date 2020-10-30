@@ -4,7 +4,8 @@ test_input() {
   printenv
   echo "Gcloud version:"
   gcloud -v
-  gcloud container clusters get-credentials $gkeClusterName --zone $gkeClusterZone --project $googleCloudProj
+  echo "gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone --project $res_gkeClusterResource_googleCloudProj"
+  gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone --project $res_gkeClusterResource_googleCloudProj
   kubectl get pods --all-namespaces
 }
 
