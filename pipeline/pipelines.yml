@@ -33,3 +33,6 @@ pipelines:
           inputResources:
             - name: gkeClusterResource
             - name: extensionSources
+          outputResources:
+            - name: gkeClusterResource
+            - name: extensionSources
