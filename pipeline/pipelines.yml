@@ -5,8 +5,6 @@ resources:
       path: danielmkn/jfrog-pipelines-extensions-sample    # <-- branch testing is used
       gitProvider: danielMiakotkinGitHub                   # <-- account should have and admin access to the repo
   # Connection of Extension resource
-
-
   - name: gkeClusterResource
     type: tutorials/gkeClusterResource
     configuration:
