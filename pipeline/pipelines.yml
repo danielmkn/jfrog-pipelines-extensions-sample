@@ -4,35 +4,37 @@ resources:
     configuration:
       path: danielmkn/jfrog-pipelines-extensions-sample    # <-- branch testing is used
       gitProvider: danielMiakotkinGitHub                   # <-- account should have and admin access to the repo
-# Connection of Extension resource
+  # Connection of Extension resource
+
+
   - name: gkeClusterResource
     type: tutorials/gkeClusterResource
     configuration:
-      # Cluster name - jf-prometheus-grafana
-      # Zone - us-central1-c
-      # Project name - jfrog-partnership-team
-      # Service account JSON string - the name of GCP integration used ? gcpK8sPartnershipProject
-      alpha: "JFrog"
-      number: 42
-      flag: true
-pipelines: 
+      projectName: "jfrog-partnership-team"
+      zone: "us-central1-c"
+      clusterName: "jf-prometheus-grafana"
+
+
+
+
+
+pipelines:
   - name: daniel_gcp_test
     configuration:
       environmentVariables:
         readOnly:
-          my_env_var: "hello" 
+          my_env_var: "hello"
     steps:
       - name: Create_GKE_Cluster
         type: tutorials/gkeCreateCluster
         configuration:
-          healthCheckUrl: "https://jfrog.com"
-          # add cluster credentials from the resource
+          integrations:
+            - name: gcpK8sPartnershipProject
           notifyOnSuccess: false
           notifyOnFailure: false
-          stuff: 
-           - "This is a string"
-           - "This is another string"
+          stuff:
+            - "This is a string"
+            - "This is another string"
           inputResources:
-           - name: gcpK8sMarketplaceProject
-           - name: gkeClusterResource
-           - name: extensionSources
+            - name: gkeClusterResource
+            - name: extensionSources
