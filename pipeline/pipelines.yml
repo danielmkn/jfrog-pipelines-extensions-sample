@@ -1,33 +1,40 @@
 resources:
-  - name: MyGitHub
+  - name: extensionSources
     type: GitRepo
     configuration:
-      path: danielmkn/jfrog-pipelines-extensions-sample/pipeline    # <-- Change to your repository path
-      gitProvider: danielMiakotkinGitHub                                    # <-- Change to your GitHub integration
-      
-  - name: MyTest
+      path: danielmkn/jfrog-pipelines-extensions-sample    # <-- branch testing is used
+      gitProvider: danielMiakotkinGitHub                   # <-- account should have and admin access to the repo
+  # Connection of Extension resource
+
+
+  - name: gkeClusterResource
     type: tutorials/gkeClusterResource
     configuration:
-      alpha: "JFrog"
-      number: 42
-      flag: true
+      projectName: "jfrog-partnership-team"
+      zone: "us-central1-c"
+      clusterName: "jf-prometheus-grafana"
 
-pipelines: 
-  - name: MyHealthCheck
+
+
+
+
+pipelines:
+  - name: daniel_gcp_test
     configuration:
       environmentVariables:
         readOnly:
-          my_env_var: "hello" 
+          my_env_var: "hello"
     steps:
-      - name: Health_Check_Step
+      - name: Create_GKE_Cluster
         type: tutorials/gkeCreateCluster
         configuration:
-          healthCheckUrl: "https://jfrog.com"
+          integrations:
+            - name: gcpK8sPartnershipProject
           notifyOnSuccess: false
           notifyOnFailure: false
-          stuff: 
-           - "This is a string"
-           - "This is another string"
+          stuff:
+            - "This is a string"
+            - "This is another string"
           inputResources:
-           - name: MyTest
-           - name: MyGitHub
+            - name: gkeClusterResource
+            - name: extensionSources
