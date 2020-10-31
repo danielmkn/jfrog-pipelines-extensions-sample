@@ -37,6 +37,7 @@ pipelines:
           clusterOptions: "--enable-autoscaling"
           inputResources:
             - name: extensionSources
+            - name: gkeClusterResource
           #outputResources:
           #  - name: gkeClusterResource
             #- name: extensionSources
