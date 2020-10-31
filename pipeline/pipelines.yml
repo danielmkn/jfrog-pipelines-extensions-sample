@@ -37,7 +37,7 @@ pipelines:
           clusterOptions: "--enable-autoscaling"
           inputResources:
             - name: extensionSources
-          outputResources:
-            - name: gkeClusterResource
+          #outputResources:
+          #  - name: gkeClusterResource
             #- name: extensionSources
-            #- name: gcpK8sPartnershipProject
+          #  - name: gcpK8sPartnershipProject
