@@ -20,7 +20,7 @@ pipelines:
         readOnly:
           my_env_var: "hello"
     steps:
-      - name: Create_GKE_Cluster
+      - name: Create_GKE_Cluster_step
         type: tutorials/gkeCreateCluster
         configuration:
           integrations:
