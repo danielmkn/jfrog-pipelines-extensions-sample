@@ -29,7 +29,7 @@ pipelines:
           notifyOnFailure: false
           googleCloudProj: "jfrog-partnership-team"
           gkeClusterZone: "us-central1-c"
-          gkeClusterName: "created-by-pipelines-extension"
+          gkeClusterName: "created-by-pipelines-extension1"
           num-nodes: 6
           machine-type: "n1-standard-1"
           min-nodes: 1
