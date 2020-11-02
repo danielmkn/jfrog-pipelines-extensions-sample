@@ -11,13 +11,13 @@ configuration:
     type: String
   gkeClusterName:
     type: String
-  num-nodes:
+  numNodes:
     type: Int
-  machine-type:
+  machineType:
     type: String
-  min-nodes:
+  minNodes:
     type: Int
-  max-nodes:
+  maxNodes:
     type: Int
   clusterOptions:
     type: String
