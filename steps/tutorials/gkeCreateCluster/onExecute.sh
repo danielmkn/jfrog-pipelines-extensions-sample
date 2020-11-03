@@ -3,7 +3,7 @@ run_kubectl_command() {
     ls -al
     printenv
     echo "##### TEST #####"
-    echo "%%context.machine-type%%"
+    echo "%%context.machineType%%"
 
 
 }
