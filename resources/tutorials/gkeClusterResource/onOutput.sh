@@ -1,7 +1,10 @@
 list_cluster_pods() {
   echo "Resource name: $1"
-  echo "Cluster pods in all namespaces:"
-  kubectl get pods --all-namespaces
+  echo "Available variables in onOutput step"
+  echo $googleCloudProj
+  printenv
+
+
 
   # return cluster parameters
 
