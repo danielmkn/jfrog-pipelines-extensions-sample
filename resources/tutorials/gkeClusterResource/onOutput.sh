@@ -16,7 +16,8 @@ list_cluster_pods() {
   write_output gkeClusterResource clusterName=$step_configuration_gkeClusterName zone=$step_configuration_gkeClusterZone \
                           project=$step_configuration_googleCloudProj machineType=$step_configuration_machineType
 
-
+  echo "Step variable"
+  echo $step_configuration_gkeClusterName
 
 
   # return cluster parameters
