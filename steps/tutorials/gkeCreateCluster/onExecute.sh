@@ -1,7 +1,7 @@
 run_kubectl_command() {
   echo "onExecute step"
     printenv
-    echo "##### TEST #####"
+    echo "##### Create GKE cluster $step_configuration_gkeClusterName #####"
 
     gcloud container clusters create $step_configuration_gkeClusterName --zone $step_configuration_gkeClusterZone \
       --node-locations $step_configuration_gkeClusterZone --num-nodes $step_configuration_numNodes $step_configuration_clusterOptions \

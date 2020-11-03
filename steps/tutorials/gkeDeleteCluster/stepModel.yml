@@ -1,0 +1,21 @@
+configuration:
+  notifyOnSuccess:
+    type: Boolean
+  notifyOnFailure:
+    type: Boolean
+  googleCloudProj:
+    type: String
+  gkeClusterZone:
+    type: String
+  gkeClusterName:
+    type: String
+  numNodes:
+    type: Int
+  machineType:
+    type: String
+  minNodes:
+    type: Int
+  maxNodes:
+    type: Int
+  clusterOptions:
+    type: String
