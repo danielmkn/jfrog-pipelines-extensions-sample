@@ -25,8 +25,8 @@ run_kubectl_command() {
     echo "Machine type: " $res_configuration_machineType
     echo "Number of nodes: " $res_configuration_numNodes
     echo "Minimum number of nodes: " $res_configuration_minNodes
-    echo "Maximum number of nodes: " res_configuration_maxNodes
-    echo "Cluster options: " res_configuration_clusterOptions
+    echo "Maximum number of nodes: " $res_configuration_maxNodes
+    echo "Cluster options: " $res_configuration_clusterOptions
 
 }
 
