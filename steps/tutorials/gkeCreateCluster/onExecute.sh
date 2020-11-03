@@ -1,4 +1,4 @@
-run_kubectl_command() {
+create_gke_cluster() {
   echo "onExecute step"
     printenv
     echo "##### Create GKE cluster $step_configuration_gkeClusterName #####"
@@ -30,4 +30,4 @@ run_kubectl_command() {
 
 }
 
-execute_command run_kubectl_command
+execute_command create_gke_cluster

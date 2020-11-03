@@ -1,4 +1,4 @@
-run_kubectl_command() {
+delete_gke_cluster() {
   echo "onExecute step"
     printenv
     echo "##### Delete GKE cluster $step_configuration_gkeClusterName #####"
@@ -8,4 +8,4 @@ run_kubectl_command() {
 
 }
 
-execute_command run_kubectl_command
+execute_command delete_gke_cluster
