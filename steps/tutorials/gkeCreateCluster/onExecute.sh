@@ -2,7 +2,6 @@ run_kubectl_command() {
   echo "onExecute step"
     ls -al
     printenv
-    echo $machineType
     echo "##### TEST #####"
     echo "%%context.machine-type%%"
 

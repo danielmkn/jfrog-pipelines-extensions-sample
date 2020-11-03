@@ -1,7 +1,6 @@
 list_cluster_pods() {
   echo "Resource name: $1"
   echo "Available variables in onOutput step"
-  echo $googleCloudProj
   printenv
 
 
