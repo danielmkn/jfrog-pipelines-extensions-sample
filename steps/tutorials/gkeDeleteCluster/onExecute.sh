@@ -3,8 +3,10 @@ delete_gke_cluster() {
     printenv
     echo "##### Delete GKE cluster $step_configuration_gkeClusterName #####"
 
-    echo $step_configuration_googleCloudProj
-
+    echo "### TESTING VALUES ###"
+    echo "Project name: " $res_gkeCluster_project
+    echo "Cluster name: " $res_gkeCluster_clusterName
+    echo "Machine type: " $res_gkeCluster_machineType
 
 }
 
