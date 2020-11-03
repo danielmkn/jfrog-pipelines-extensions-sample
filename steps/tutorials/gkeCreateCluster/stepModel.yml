@@ -1,6 +1,4 @@
 configuration:
-  healthCheckUrl:
-    type: Url
   notifyOnSuccess:
     type: Boolean
   notifyOnFailure:
