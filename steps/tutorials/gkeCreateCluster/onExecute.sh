@@ -1,6 +1,5 @@
 run_kubectl_command() {
   echo "onExecute step"
-    ls -al
     printenv
     echo "##### TEST #####"
 
@@ -12,13 +11,13 @@ run_kubectl_command() {
     gcloud container clusters get-credentials $step_configuration_gkeClusterName --zone $step_configuration_gkeClusterZone \
      --project $step_configuration_googleCloudProj
 
-    res_configuration_googleCloudProj=step_configuration_googleCloudProj
-    res_configuration_gkeClusterName=step_configuration_gkeClusterName
-    res_configuration_machineType=step_configuration_machineType
-    res_configuration_numNodes=step_configuration_numNodes
-    res_configuration_minNodes=step_configuration_minNodes
-    res_configuration_maxNodes=step_configuration_maxNodes
-    res_configuration_clusterOptions=step_configuration_clusterOptions
+    res_configuration_googleCloudProj=$step_configuration_googleCloudProj
+    res_configuration_gkeClusterName=$step_configuration_gkeClusterName
+    res_configuration_machineType=$step_configuration_machineType
+    res_configuration_numNodes=$step_configuration_numNodes
+    res_configuration_minNodes=$step_configuration_minNodes
+    res_configuration_maxNodes=$step_configuration_maxNodes
+    res_configuration_clusterOptions=$step_configuration_clusterOptions
 
     echo "New GKE cluster parameters:"
     echo "Project name: " $res_configuration_googleCloudProj
