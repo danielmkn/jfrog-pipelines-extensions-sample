@@ -4,9 +4,9 @@ delete_gke_cluster() {
     echo "##### Delete GKE cluster $step_configuration_gkeClusterName #####"
 
     echo "### TESTING VALUES ###"
-    echo "Project name: " $res_gkeCluster_project
-    echo "Cluster name: " $res_gkeCluster_clusterName
-    echo "Machine type: " $res_gkeCluster_machineType
+    echo "Project name: " $res_gkeClusterResource_project
+    echo "Cluster name: " $res_gkeClusterResource_clusterName
+    echo "Machine type: " $res_gkeClusterResource_machineType
 
 }
 
