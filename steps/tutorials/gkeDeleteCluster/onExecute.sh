@@ -10,7 +10,7 @@ delete_gke_cluster() {
   echo "Zone: " ${res_gkeClusterResource_gkeClusterZone}
 
   gcloud container clusters delete ${res_gkeClusterResource_clusterName} \
-    --zone ${res_gkeClusterResource_gkeClusterZone} --project ${res_gkeClusterResource_project}
+    --zone ${res_gkeClusterResource_gkeClusterZone} --project ${res_gkeClusterResource_project} --quiet
 }
 
 execute_command delete_gke_cluster
