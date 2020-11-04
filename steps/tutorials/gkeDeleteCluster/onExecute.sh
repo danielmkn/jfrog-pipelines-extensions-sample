@@ -4,13 +4,13 @@ delete_gke_cluster() {
   echo "##### Delete GKE cluster ${res_gkeClusterResource_clusterName} #####"
 
   echo "### TESTING VALUES ###"
-  echo "Project name: " ${res_gkeClusterResource_project}
-  echo "Cluster name: " ${res_gkeClusterResource_clusterName}
+  echo "Project name: " ${res_gkeClusterResource_googleCloudProj}
+  echo "Cluster name: " ${res_gkeClusterResource_gkeClusterName}
   echo "Machine type: " ${res_gkeClusterResource_machineType}
   echo "Zone: " ${res_gkeClusterResource_gkeClusterZone}
 
-  gcloud container clusters delete ${res_gkeClusterResource_clusterName} \
-    --zone ${res_gkeClusterResource_gkeClusterZone} --project ${res_gkeClusterResource_project} --quiet
+  gcloud container clusters delete ${res_gkeClusterResource_gkeClusterName} \
+    --zone ${res_gkeClusterResource_gkeClusterZone} --project ${res_gkeClusterResource_googleCloudProj} --quiet
 }
 
 execute_command delete_gke_cluster
