@@ -6,7 +6,7 @@ resources:
       gitProvider: danielMiakotkinGitHub                   # <-- account should have and admin access to the repo
   # Connection of Extension resource
   - name: gkeClusterResource
-    type: tutorials/gkeClusterResource
+    type: gcp/gkeClusterResource
     configuration:
       googleCloudProj: "jfrog-partnership-team"
       gkeClusterZone: "us-central1-c"
@@ -21,7 +21,7 @@ pipelines:
           my_env_var: "hello"
     steps:
       - name: Create_GKE_Cluster
-        type: tutorials/gkeCreateCluster
+        type: gcp/gkeCreateCluster
         configuration:
           integrations:
             - name: gcpK8sPartnershipProject
