@@ -1,6 +1,6 @@
 configuration:
   azureAuth:
-    type: String[]
+    type: String
   aksResourceGroup:
     type: String
   aksClusterName:
