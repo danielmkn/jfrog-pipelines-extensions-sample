@@ -3,6 +3,8 @@ configuration:
     type: Boolean
   notifyOnFailure:
     type: Boolean
+  azureAuth:
+    type: String[]
   aksResourceGroup:
     type: String
   aksClusterName:
