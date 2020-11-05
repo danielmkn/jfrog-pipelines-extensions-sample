@@ -1,4 +1,4 @@
-list_cluster_pods() {
+save_cluster_parameters() {
   echo "Resource name: $1"
   echo "Available variables in onOutput step"
   printenv
@@ -24,4 +24,4 @@ list_cluster_pods() {
 
   }
 
-execute_command list_cluster_pods
+execute_command save_cluster_parameters

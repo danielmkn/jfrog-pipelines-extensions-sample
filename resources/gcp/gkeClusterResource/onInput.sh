@@ -1,6 +1,5 @@
 list_env_variables() {
-  echo "Resource name: $1"
-  echo "Environment variables:"
+  echo "Environment variables for gkeClusterResource:"
   printenv
   echo "Gcloud version:"
   gcloud -v
