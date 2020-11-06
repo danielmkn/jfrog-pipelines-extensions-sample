@@ -9,11 +9,7 @@ configuration:
     type: String
   vmSize:
     type: String
-  numNodes:
-    type: Int
-  minCount:
-    type: Int
-  maxCount:
+  nodeCount:
     type: Int
   # Cluster options is a set of parameters for 'az aks create', described in the Azure documentation:
   # https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_create
