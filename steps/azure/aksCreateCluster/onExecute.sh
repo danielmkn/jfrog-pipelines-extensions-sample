@@ -7,6 +7,7 @@ create_aks_cluster() {
     echo "##### Create AKS cluster ${step_configuration_aksResourceGroup} #####"
     az aks create --resource-group ${step_configuration_aksResourceGroup} --name ${step_configuration_aksClusterName} \
                   --node-count ${step_configuration_nodeCount} --node-vm-size ${step_configuration_vmSize} \
+                  --service-principal $int_azurePartnership_appId --client-secret $int_azurePartnership_password \
                   ${step_configuration_clusterOptions}
 
 
