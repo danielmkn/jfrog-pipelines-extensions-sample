@@ -5,7 +5,7 @@ configuration:
     type: Boolean
   azureAuth:
     type: String
-  aksResourceGroup:
+  azureResourceGroup:
     type: String
   aksClusterName:
     type: String
@@ -19,3 +19,4 @@ configuration:
   # https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_create
   clusterOptions:
     type: String
+
