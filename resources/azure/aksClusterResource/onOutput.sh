@@ -12,7 +12,7 @@ save_cluster_parameters() {
   echo "Maximum number of nodes: " $step_configuration_maxCount
   echo "Cluster options: " $step_configuration_clusterOptions
 
-  write_output aksClusterResource aksResourceGroup=$step_configuration_aksResourceGroup \
+  write_output aksClusterResource aksResourceGroup=$step_configuration_azureResourceGroup \
                                   aksClusterName=$step_configuration_aksClusterName \
                                   location=$step_configuration_location \
                                   vmSize=$step_configuration_vmSize \

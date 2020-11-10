@@ -1,0 +1,11 @@
+configuration:
+  notifyOnSuccess:
+    type: Boolean
+  notifyOnFailure:
+    type: Boolean
+  azureAuth:
+    type: String
+  azureResourceGroup:
+    type: String
+  location:
+    type: String

@@ -13,7 +13,7 @@ delete_aks_cluster() {
   echo "Maximum number of nodes: " $res_aksClusterResource_maxCount
   echo "Cluster options: " $res_aksClusterResource_clusterOptions
 
-  az aks show --resource-group ${res_aksClusterResource_aksResourceGroup} --name ${res_aksClusterResource_aksClusterName}
+  az aks show --resource-group ${res_aksClusterResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}
 
 }
 
