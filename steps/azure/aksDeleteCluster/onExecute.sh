@@ -2,9 +2,7 @@ delete_aks_cluster() {
   echo "onExecute step"
   printenv
   echo "##### Delete AKS cluster ${res_aksClusterResource_aksClusterName} #####"
-
-  echo "### TESTING VALUES ###"
-  echo "Resource group name: " $res_aksClusterResource_azureResourceGroup
+  echo "Resource group name: " $res_azureResGroupResource_azureResourceGroup
   echo "Cluster name: " $res_aksClusterResource_aksClusterName
   echo "Cluster location: " $res_azureResGroupResource_location
   echo "VM size: " $res_aksClusterResource_vmSize

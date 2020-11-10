@@ -2,7 +2,7 @@ save_rg_parameters() {
   echo "Environment variables for azureResGroupResource:"
   printenv
 
-  echo "Azure resource roup parameters:"
+  echo "Azure resource group parameters:"
   echo "Resource group name: " $step_configuration_azureResourceGroup
   echo "Resource group location: " $step_configuration_location
 
