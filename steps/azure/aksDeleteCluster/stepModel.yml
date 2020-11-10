@@ -19,3 +19,5 @@ configuration:
   # https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_create
   clusterOptions:
     type: String
+  isDeleted:
+    type: Boolean
