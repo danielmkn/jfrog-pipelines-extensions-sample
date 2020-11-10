@@ -17,7 +17,8 @@ save_cluster_parameters() {
                                   numNodes=$step_configuration_nodeCount \
                                   minCount=$step_configuration_minCount \
                                   maxCount=$step_configuration_maxCount \
-                                  clusterOptions=$step_configuration_clusterOptions
+                                  clusterOptions=$step_configuration_clusterOptions \
+                                  isDeleted=$step_configuration_isDeleted
   }
 
 execute_command save_cluster_parameters
