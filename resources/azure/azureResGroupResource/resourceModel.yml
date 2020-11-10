@@ -5,3 +5,5 @@ configuration:
     type: String
   location:
     type: String
+  isDeleted:
+    type: Boolean

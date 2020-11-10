@@ -16,4 +16,4 @@ configuration:
   clusterOptions:
     type: String
   isDeleted:
-    typr: Boolean
+    type: Boolean
