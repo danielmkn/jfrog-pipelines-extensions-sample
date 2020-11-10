@@ -10,7 +10,7 @@ save_cluster_parameters() {
   echo "Node count: " $step_configuration_nodeCount
   echo "Cluster options: " $step_configuration_clusterOptions
 
-  write_output aksClusterResource aksResourceGroup=$res_azureResGroupResource_azureResourceGroup \
+  write_output aksClusterResource azureResGroupResource=$res_azureResGroupResource_azureResourceGroup \
                                   location=$res_azureResGroupResource_location \
                                   aksClusterName=$step_configuration_aksClusterName \
                                   vmSize=$step_configuration_vmSize \
