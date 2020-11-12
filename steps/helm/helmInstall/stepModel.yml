@@ -1,0 +1,8 @@
+configuration:
+  helmName:
+    type: String
+  helmChart:
+    type: String
+  setFlags:
+    type: String
+
