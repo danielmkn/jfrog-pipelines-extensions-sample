@@ -4,6 +4,7 @@ add_helm_repository() {
 
     echo "##### Add helm repository ${step_configuration_repoName} #####"
 
+    helm init
     helm repo add $step_configuration_repoName $step_configuration_repoUrl
     helm repo update
 
