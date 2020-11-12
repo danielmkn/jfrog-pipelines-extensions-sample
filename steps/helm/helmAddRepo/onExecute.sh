@@ -9,7 +9,7 @@ add_helm_repository() {
 
     echo "##### Add helm repository ${step_configuration_repoName} #####"
 
-    helm version
+    #helm version
     echo "helm 3 install"
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
     chmod 700 get_helm.sh
