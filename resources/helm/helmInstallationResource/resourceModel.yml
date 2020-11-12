@@ -1,3 +1,9 @@
 configuration:
   helmName:
     type: String
+  repoName:
+    type: String
+  repoUrl:
+    type: String
+  chartVersion:
+    type: Sting

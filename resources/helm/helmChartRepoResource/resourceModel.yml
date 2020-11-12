@@ -1,5 +1,0 @@
-configuration:
-  repoName:
-    type: String
-  repoUrl:
-    type: String
