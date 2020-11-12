@@ -15,6 +15,7 @@ add_helm_repository() {
     chmod 700 get_helm.sh
     ./get_helm.sh
 
+    helm version
     echo "helm repo add"
     helm repo add $step_configuration_repoName $step_configuration_repoUrl
     echo "helm update"
