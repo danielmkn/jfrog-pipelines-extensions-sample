@@ -7,4 +7,8 @@ configuration:
     type: String
   chartVersion:
     type: String
+  repoName:
+    type: String
+  repoUrl:
+    type: String
 
