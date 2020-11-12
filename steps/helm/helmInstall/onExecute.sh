@@ -2,8 +2,8 @@ helm_install() {
   echo "onExecute step"
     printenv
 
-    gcloud container clusters get-credentials created-by-pipelines-extension --zone us-central1-c \
-     --project jfrog-partnership-team
+    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
+     --project $res_gkeClusterResource_googleCloudProj
 
     if [ -z "$step_configuration_chartVersion" ]
     then
