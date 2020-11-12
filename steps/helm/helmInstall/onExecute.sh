@@ -9,7 +9,8 @@ helm_install() {
     else
       VERSION="--version=${step_configuration_chartVersion}"
     fi
-
+    echo "Check helm version in this step"
+    helm version
     helm install $step_configuration_helmName $step_configuration_helmChart \
                  $VERSION \
                  $int_helmInstallParameters_setFlags

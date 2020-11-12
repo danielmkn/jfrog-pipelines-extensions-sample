@@ -20,6 +20,7 @@ add_helm_repository() {
     helm repo add $step_configuration_repoName $step_configuration_repoUrl
     echo "helm update"
     helm repo update
+    helm repo list
 
 }
 
