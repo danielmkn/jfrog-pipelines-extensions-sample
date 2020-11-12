@@ -10,8 +10,11 @@ add_helm_repository() {
     echo "##### Add helm repository ${step_configuration_repoName} #####"
 
     helm version
-    echo "helm init"
-    helm init
+    echo "helm 3 install"
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+
     echo "helm repo add"
     helm repo add $step_configuration_repoName $step_configuration_repoUrl
     echo "helm update"
