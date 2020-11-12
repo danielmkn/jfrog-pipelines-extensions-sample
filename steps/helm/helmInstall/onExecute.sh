@@ -16,10 +16,10 @@ helm_install() {
     echo "##### Add helm repository ${step_configuration_repoName} #####"
 
     #helm version
-    echo "helm 3 install"
-    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-    chmod 700 get_helm.sh
-    ./get_helm.sh
+#    echo "helm 3 install"
+#    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+#    chmod 700 get_helm.sh
+#    ./get_helm.sh
 
     helm version
     echo "helm repo add"
@@ -29,11 +29,11 @@ helm_install() {
     helm repo list
 
     #####
-    echo "Check helm version in this step"
-    helm version
-    helm install $step_configuration_helmName $step_configuration_helmChart \
-                 $VERSION \
-                 $int_helmInstallParameters_setFlags
+#    echo "Check helm version in this step"
+#    helm version
+#    helm install $step_configuration_helmName $step_configuration_helmChart \
+#                 $VERSION \
+#                 $int_helmInstallParameters_setFlags
 
 }
 
