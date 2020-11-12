@@ -5,5 +5,7 @@ configuration:
     type: String
   repoUrl:
     type: String
+  helmChart:
+    type: String
   chartVersion:
     type: String
