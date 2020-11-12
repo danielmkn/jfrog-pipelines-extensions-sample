@@ -5,7 +5,7 @@ helm_install() {
     echo "##### Install helm chart ${step_configuration_repoName} #####"
 
     helm install $step_configuration_helmName $step_configuration_helmChart \
-                 $step_configuration_setFlags
+                 $int_helmInstallParameters_setFlags
 
 }
 
