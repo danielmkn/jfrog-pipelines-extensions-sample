@@ -1,0 +1,3 @@
+configuration:
+  helmName:
+    type: String

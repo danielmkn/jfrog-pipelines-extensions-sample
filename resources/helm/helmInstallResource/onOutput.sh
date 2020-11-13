@@ -1,5 +1,5 @@
 save_helmInstallationResource_parameters() {
-  echo "Environment variables for helmChartResource:"
+  echo "Environment variables for helmInstallResource:"
   printenv
 
   if [ -z "$step_configuration_chartVersion" ]
@@ -16,7 +16,7 @@ save_helmInstallationResource_parameters() {
   echo "Helm chart pth: " $step_configuration_helmChart
   echo "Helm chart version: " $VERSION
 
-  write_output helmInstallationResource helmName=$step_configuration_helmName
+  write_output helmInstallResource helmName=$step_configuration_helmName
 #                                        repoName=$step_configuration_repoName \
 #                                        repoUrl=$step_configuration_repoUrl \
 #                                        helmChart=$step_configuration_helmChart \

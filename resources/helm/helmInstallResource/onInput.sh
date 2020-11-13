@@ -1,5 +1,5 @@
 list_env_variables() {
-  echo "Environment variables for helmInstallationRepoResource:"
+  echo "Environment variables for helmInstallResource:"
   printenv
   echo "Helm version:"
   helm version
