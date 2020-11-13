@@ -16,11 +16,11 @@ save_helmInstallationResource_parameters() {
   echo "Helm chart pth: " $step_configuration_helmChart
   echo "Helm chart version: " $VERSION
 
-  write_output helmInstallationResource helmName=$step_configuration_helmName \
-                                        repoName=$step_configuration_repoName \
-                                        repoUrl=$step_configuration_repoUrl \
-                                        helmChart=$step_configuration_helmChart \
-                                        chartVersion=$VERSION
+  write_output helmInstallationResource helmName=$step_configuration_helmName
+#                                        repoName=$step_configuration_repoName \
+#                                        repoUrl=$step_configuration_repoUrl \
+#                                        helmChart=$step_configuration_helmChart \
+#                                        chartVersion=$VERSION
   }
 
 execute_command save_helmInstallationResource_parameters
