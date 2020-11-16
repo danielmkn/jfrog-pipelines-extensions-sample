@@ -2,6 +2,9 @@ helm_install() {
   echo "onExecute step"
     printenv
 
+    echo "#### Affinity group test ####"
+    TEST="var created in helmInstall step"
+
     #TODO: add GKE and AKS connection command. Find out which flag to use to determine which connection to use
     gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
      --project $res_gkeClusterResource_googleCloudProj
