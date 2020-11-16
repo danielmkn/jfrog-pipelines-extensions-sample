@@ -1,0 +1,14 @@
+configuration:
+  helmName:
+    type: String
+  helmChart:
+    type: String
+  setFlags:
+    type: String
+  chartVersion:
+    type: String
+  repoName:
+    type: String
+  repoUrl:
+    type: String
+
