@@ -3,7 +3,8 @@ helm_install() {
     printenv
 
     echo "#### Affinity group test ####"
-    TEST="var created in helmInstall step"
+    echo "Username: "
+    whoami
 
     #TODO: add GKE and AKS connection command. Find out which flag to use to determine which connection to use
     gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
@@ -18,9 +19,11 @@ helm_install() {
 
     echo "##### Add helm repository ${step_configuration_repoName} #####"
     echo "Helm 3 install"
-    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-    chmod 700 get_helm.sh
-    ./get_helm.sh
+    curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+    sudo apt-get install apt-transport-https --yes
+    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+    sudo apt-get update
+    sudo apt-get install helm
 
     helm version
     echo "helm repo add"
