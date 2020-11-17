@@ -8,11 +8,11 @@ helm_install() {
 
     if [ -z "$res_gkeClusterResource_gkeClusterName" ]
     then
-      az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} \
-      --name ${step_configuration_aksClusterName}
+      echo "az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}"
+      az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}
     else
-      gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
-      --project $res_gkeClusterResource_googleCloudProj
+      gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone ${res_gkeClusterResource_gkeClusterZone} \
+      --project ${res_gkeClusterResource_googleCloudProj}
     fi
 
     if [ -z "$step_configuration_chartVersion" ]
@@ -30,14 +30,14 @@ helm_install() {
 
     helm version
     echo "##### Add helm repository ${step_configuration_repoName} #####"
-    helm repo add $step_configuration_repoName $step_configuration_repoUrl
+    helm repo add ${step_configuration_repoName} ${step_configuration_repoUrl}
     helm repo update
     helm repo list
 
     echo "##### Install Helm chart ${step_configuration_helmChart} #####"
-    helm install $step_configuration_helmName $step_configuration_helmChart \
-                 $VERSION \
-                 $int_helmInstallParameters_setFlags
+    helm install ${step_configuration_helmName} ${step_configuration_helmChart} \
+                 ${VERSION} \
+                 ${int_helmInstallParameters_setFlags}
 
 }
 
