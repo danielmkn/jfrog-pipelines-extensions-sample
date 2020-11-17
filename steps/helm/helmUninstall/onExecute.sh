@@ -8,8 +8,12 @@ helm_uninstall() {
     which helm
 
     #TODO: add GKE and AKS connection command. Find out which flag to use to determine which connection to use
-    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
-     --project $res_gkeClusterResource_googleCloudProj
+#    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
+#     --project $res_gkeClusterResource_googleCloudProj
+
+    gcloud container clusters get-credentials created-by-pipelines-extension  --zone us-central1-c \
+     --project jfrog-partnership-team
+
 
 #    echo "Helm 3 install"
 #    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3

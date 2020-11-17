@@ -7,8 +7,11 @@ helm_install() {
     whoami
 
     #TODO: add GKE and AKS connection command. Find out which flag to use to determine which connection to use
-    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
-     --project $res_gkeClusterResource_googleCloudProj
+#    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
+#     --project $res_gkeClusterResource_googleCloudProj
+
+    gcloud container clusters get-credentials created-by-pipelines-extension  --zone us-central1-c \
+     --project jfrog-partnership-team
 
     if [ -z "$step_configuration_chartVersion" ]
     then
@@ -17,11 +20,11 @@ helm_install() {
       VERSION="--version=${step_configuration_chartVersion}"
     fi
 
-    echo "##### Add helm repository ${step_configuration_repoName} #####"
-    echo "Helm 3 install"
 
+    echo "Helm 3 install"
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
     chmod 700 get_helm.sh
+    echo "Run Helm installation script"
     ./get_helm.sh
     # Make Helm 3 work in the next step
     cp /usr/local/bin/helm /usr/bin/helm
@@ -34,10 +37,10 @@ helm_install() {
 #    echo "apt-get update"
 #    sudo apt-get update
 
-    sudo apt-get install helm
+#    sudo apt-get install helm
 
     helm version
-    echo "helm repo add"
+    echo "##### Add helm repository ${step_configuration_repoName} #####"
     helm repo add $step_configuration_repoName $step_configuration_repoUrl
     helm repo update
     helm repo list
