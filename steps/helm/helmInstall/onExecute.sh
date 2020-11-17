@@ -19,10 +19,21 @@ helm_install() {
 
     echo "##### Add helm repository ${step_configuration_repoName} #####"
     echo "Helm 3 install"
-    curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-    sudo apt-get install apt-transport-https --yes
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-    sudo apt-get update
+
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+    # Make Helm 3 work in the next step
+    cp /usr/local/bin/helm /usr/bin/helm
+    which helm
+
+
+#    curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+#    sudo apt-get install apt-transport-https --yes
+#    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+#    echo "apt-get update"
+#    sudo apt-get update
+
     sudo apt-get install helm
 
     helm version
