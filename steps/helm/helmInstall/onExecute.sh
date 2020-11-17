@@ -7,11 +7,11 @@ helm_install() {
     whoami
 
     #TODO: add GKE and AKS connection command. Find out which flag to use to determine which connection to use
-#    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
-#     --project $res_gkeClusterResource_googleCloudProj
+    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
+     --project $res_gkeClusterResource_googleCloudProj
 
-    gcloud container clusters get-credentials created-by-pipelines-extension  --zone us-central1-c \
-     --project jfrog-partnership-team
+#    gcloud container clusters get-credentials created-by-pipelines-extension  --zone us-central1-c \
+#     --project jfrog-partnership-team
 
     if [ -z "$step_configuration_chartVersion" ]
     then
@@ -20,24 +20,11 @@ helm_install() {
       VERSION="--version=${step_configuration_chartVersion}"
     fi
 
-
     echo "Helm 3 install"
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
     chmod 700 get_helm.sh
     echo "Run Helm installation script"
     ./get_helm.sh
-    # Make Helm 3 work in the next step
-    cp /usr/local/bin/helm /usr/bin/helm
-    which helm
-
-
-#    curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-#    sudo apt-get install apt-transport-https --yes
-#    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-#    echo "apt-get update"
-#    sudo apt-get update
-
-#    sudo apt-get install helm
 
     helm version
     echo "##### Add helm repository ${step_configuration_repoName} #####"
