@@ -6,12 +6,14 @@ helm_install() {
     echo "Username: "
     whoami
 
-    #TODO: add GKE and AKS connection command. Find out which flag to use to determine which connection to use
-    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
-     --project $res_gkeClusterResource_googleCloudProj
-
-#    gcloud container clusters get-credentials created-by-pipelines-extension  --zone us-central1-c \
-#     --project jfrog-partnership-team
+    if [ -z "$res_gkeClusterResource_gkeClusterName" ]
+    then
+      az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} \
+      --name ${step_configuration_aksClusterName}
+    else
+      gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone $res_gkeClusterResource_gkeClusterZone \
+      --project $res_gkeClusterResource_googleCloudProj
+    fi
 
     if [ -z "$step_configuration_chartVersion" ]
     then
