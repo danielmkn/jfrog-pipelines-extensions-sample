@@ -24,6 +24,7 @@ get_lb_ip() {
   fi
 
   LB_IP=$(kubectl get svc $NAMESPACE | grep LoadBalancer | awk '{$2=$2};1' | cut -f4 -d ' ')
+  echo "Load balancer IP: $LB_IP"
 
 }
 
