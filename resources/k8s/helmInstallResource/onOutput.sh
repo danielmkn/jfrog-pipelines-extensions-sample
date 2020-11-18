@@ -19,7 +19,7 @@ save_helmInstallationResource_parameters() {
   echo "Helm installation name: " $step_configuration_helmName
   echo "Helm repo name: " $step_configuration_repoName
   echo "Helm repo url: " $step_configuration_repoUrl
-  echo "Helm chart pth: " $step_configuration_helmChart
+  echo "Helm chart path: " $step_configuration_helmChart
   echo "Helm chart version: " $VERSION
   echo "Helm chart namespace: " $NAMESPACE
 
