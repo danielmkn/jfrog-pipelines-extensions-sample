@@ -2,13 +2,9 @@ helm_install() {
   echo "onExecute step"
     printenv
 
-    echo "#### Affinity group test ####"
-    echo "Username: "
-    whoami
-
+    echo "#### Connecting to the k8s cluster ####"
     if [ -z "$res_gkeClusterResource_gkeClusterName" ]
     then
-      echo "az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}"
       az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}
     else
       gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone ${res_gkeClusterResource_gkeClusterZone} \
