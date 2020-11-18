@@ -7,7 +7,7 @@ wait_for_pods() {
   then
     az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}
   else
-    gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone ${res_gkeClusterResource_gkeClusterZone} \
+    gcloud container clusters get-credentials ${res_gkeClusterResource_gkeClusterName} --zone ${res_gkeClusterResource_gkeClusterZone} \
     --project ${res_gkeClusterResource_googleCloudProj}
   fi
 

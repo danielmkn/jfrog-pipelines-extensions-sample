@@ -10,12 +10,25 @@ helm_install() {
       gcloud container clusters get-credentials $res_gkeClusterResource_gkeClusterName --zone ${res_gkeClusterResource_gkeClusterZone} \
       --project ${res_gkeClusterResource_googleCloudProj}
     fi
-
+    # Verify if the chart version is passed from the pipelines
     if [ -z "$step_configuration_chartVersion" ]
     then
       VERSION=""
     else
       VERSION="--version=${step_configuration_chartVersion}"
+    fi
+    # Verify if namespace is passed from the pipelines
+    if [ -z "$step_configuration_namespace" ]
+    then
+      NAMESPACE=""
+    else
+      NAMESPACE="-n ${step_configuration_namespace}"
+    fi
+    # Verify if namespace exists, if not - create
+    if ! kubectl get namespaces -o json | jq -r ".items[].metadata.name" | grep ${step_configuration_namespace};
+    then
+      echo "Creating a new namespace ${step_configuration_namespace}"
+      kubectl create namespace ${step_configuration_namespace}
     fi
 
     echo "Helm 3 install"
@@ -33,6 +46,7 @@ helm_install() {
     echo "##### Install Helm chart ${step_configuration_helmChart} #####"
     helm install ${step_configuration_helmName} ${step_configuration_helmChart} \
                  ${VERSION} \
+                 ${NAMESPACE} \
                  ${int_helmInstallParameters_setFlags}
 
 }
