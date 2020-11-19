@@ -11,7 +11,7 @@ wait_for_pods() {
     --project ${res_gkeClusterResource_googleCloudProj}
   fi
 
-  local NAMESPACE="${res_helmInstallResource_namespace:-default}"
+  NAMESPACE="${res_helmInstallResource_namespace:-default}"
 
   echo "#####################"
   echo "### Wait for pods ###"
