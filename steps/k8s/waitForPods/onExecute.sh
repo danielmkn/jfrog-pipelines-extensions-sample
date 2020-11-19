@@ -30,7 +30,7 @@ wait_for_pods() {
   #kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]'
 
 
-  if ! kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]' 1&> /dev/null
+  if kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]' 1&> /dev/null
   then
       echo "No resources in the cluster/namespace. Failed!"
       exit 1
