@@ -3,20 +3,15 @@ wait_for_pods() {
   printenv
 
   echo "#### Connecting to the k8s cluster ####"
-#  if [ -z "$res_gkeClusterResource_gkeClusterName" ]
-#  then
-#    az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}
-#  else
-#    gcloud container clusters get-credentials ${res_gkeClusterResource_gkeClusterName} --zone ${res_gkeClusterResource_gkeClusterZone} \
-#    --project ${res_gkeClusterResource_googleCloudProj}
-#  fi
-
-    gcloud container clusters get-credentials created-by-pipelines-extension5 --zone us-central1-c \
-    --project jfrog-partnership-team
-
+  if [ -z "$res_gkeClusterResource_gkeClusterName" ]
+  then
+    az aks get-credentials --resource-group ${res_azureResGroupResource_azureResourceGroup} --name ${res_aksClusterResource_aksClusterName}
+  else
+    gcloud container clusters get-credentials ${res_gkeClusterResource_gkeClusterName} --zone ${res_gkeClusterResource_gkeClusterZone} \
+    --project ${res_gkeClusterResource_googleCloudProj}
+  fi
 
   NAMESPACE="${res_helmInstallResource_namespace:-default}"
-
 
   echo "#####################"
   echo "### Wait for pods ###"
