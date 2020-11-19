@@ -24,6 +24,10 @@ wait_for_pods() {
   STATEFULSET_NOT_FINISHED=$(kubectl get statefulset -n "$NAMESPACE" | awk '{$2=$2};1' | cut -f2 -d ' ' | grep -v "READY" | grep -v "1/1"| wc -l)
   JOBS_NOT_FINISHED=$(kubectl get jobs -n "$NAMESPACE" | awk '{$2=$2};1' | cut -f2 -d ' ' | grep -v "COMPLETIONS" | grep -v "1/1"| wc -l)
   PODS_ERROR=$(kubectl get pods -n "$NAMESPACE" | grep -i 'err' | wc -l)
+  echo "deployed resources"
+  echo "kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]'"
+  kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]'
+
 
   if ! kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[] // empty' 1&> /dev/null
   then
