@@ -16,6 +16,7 @@ wait_for_pods() {
 
 
   NAMESPACE="${res_helmInstallResource_namespace:-default}"
+#  NAMESPACE=pipelines
 
   echo "#####################"
   echo "### Wait for pods ###"
@@ -26,7 +27,7 @@ wait_for_pods() {
   PODS_ERROR=$(kubectl get pods -n "$NAMESPACE" | grep -i 'err' | wc -l)
   echo "deployed resources"
   echo "kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]'"
-  kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]'
+  #kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[]'
 
 
   if ! kubectl get pods -n "$NAMESPACE" -o json | jq -re '.items[] // empty' 1&> /dev/null
@@ -34,6 +35,7 @@ wait_for_pods() {
       echo "No resources in the cluster/namespace. Failed!"
       exit 1
   else
+    echo "hello"
     while [ "${DEPLOYMENT_NOT_FINISHED}" -gt 0 ] || [ "${STATEFULSET_NOT_FINISHED}" -gt 0 ] || [ "${JOBS_NOT_FINISHED}" -gt 0 ]
     do
       sleep 15
@@ -46,9 +48,11 @@ wait_for_pods() {
         echo "Deployment went to error state. Failed!"
         exit 1
       else
-        kubectl get pods $NAMESPACE
+        echo "hello again"
+        kubectl get pods -n $NAMESPACE
       fi
     done
+    echo "Success"
   fi
 }
 
