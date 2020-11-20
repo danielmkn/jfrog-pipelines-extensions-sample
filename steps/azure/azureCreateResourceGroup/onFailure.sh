@@ -8,7 +8,7 @@ failure() {
     fi
     if [ "$notifyOnSuccess" == "true" ]; then
       echo "Sending success notification"
-      send_notification "$slackIntegrationName" --text "Failed to creste Azure resource group ${azureResourceGroup}"
+      send_notification "$slackIntegrationName" --text "*Failed* to create Azure resource group *${azureResourceGroup}*"
     else
       echo "notifyOnSuccess is set to false, skipping notification"
     fi
