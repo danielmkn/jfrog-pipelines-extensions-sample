@@ -22,14 +22,15 @@ helm_install() {
     then
       NAMESPACE=""
     else
+      # Verify if namespace exists, if not - create
+      if ! kubectl get namespaces -o json | jq -r ".items[].metadata.name" | grep ${step_configuration_namespace};
+      then
+        echo "Creating a new namespace ${step_configuration_namespace}"
+        kubectl create namespace ${step_configuration_namespace}
+      fi
       NAMESPACE="-n ${step_configuration_namespace}"
     fi
-    # Verify if namespace exists, if not - create
-    if ! kubectl get namespaces -o json | jq -r ".items[].metadata.name" | grep ${step_configuration_namespace};
-    then
-      echo "Creating a new namespace ${step_configuration_namespace}"
-      kubectl create namespace ${step_configuration_namespace}
-    fi
+
 
     echo "Helm 3 install"
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
