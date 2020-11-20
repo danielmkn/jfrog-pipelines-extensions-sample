@@ -18,7 +18,8 @@ helm_uninstall() {
 
     helm version
     echo "##### Uninstall Helm chart ${res_helmInstallResource_helmChart} #####"
-    helm uninstall ${res_helmInstallResource_helmName}
+    NAMESPACE="${res_helmInstallResource_namespace:-default}"
+    helm uninstall ${res_helmInstallResource_helmName} -n $NAMESPACE
 }
 
 execute_command helm_uninstall
