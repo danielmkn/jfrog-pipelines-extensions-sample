@@ -9,7 +9,7 @@ success() {
     fi
     if [ "$notifyOnSuccess" == "true" ]; then
       echo "Sending success notification"
-      send_notification "$slackIntegrationName" --text "Azure resource group ${azureResourceGroup} has been successfully created"
+      send_notification "$slackIntegrationName" --text "Azure resource group *${azureResourceGroup}* has been successfully created"
     else
       echo "notifyOnSuccess is set to false, skipping notification"
     fi
