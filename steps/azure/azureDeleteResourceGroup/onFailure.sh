@@ -2,7 +2,7 @@ failure() {
   local slackIntegrationName=$(get_integration_name --type "Slack")
   if [ ! -z "$slackIntegrationName" ]; then
     local notifyOnSuccess=$(find_step_configuration_value "notifyOnSuccess")
-    local azureResourceGroup=$(find_step_configuration_value "azureResourceGroup")
+    local azureResourceGroup=$(find_resource_variable azureResGroupResource azureResourceGroup)
     if [ -z "$notifyOnSuccess" ]; then
       notifyOnSuccess=false
     fi
